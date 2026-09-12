@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Energy Connect | Utility Services &amp; Energy Bill Assistance</title>
+<meta name="description" content="Energy Connect helps customers navigate energy and utility services, including bill payments, provider options, new service requests, and technician assistance.">
+<link rel="canonical" href="https://www.example.com/services.html">
+<meta property="og:title" content="Energy Connect | Utility Services & Energy Bill Assistance">
+<meta property="og:description" content="Energy Connect helps customers navigate energy and utility services, including bill payments, provider options, new service requests, and technician assistance.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+
+<style>
+/* =================================================
+   DESIGN TOKENS
+================================================= */
+:root {
+  --navy: #0B2447;
+  --navy-soft: #16345F;
+  --blue: #2F6FED;
+  --blue-dark: #2058C9;
+  --green: #1E9E6C;
+  --bg: #FFFFFF;
+  --bg-soft: #F4F6F9;
+  --text: #16202E;
+  --text-muted: #5B6B7F;
+  --border: #E3E8EF;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --shadow-card: 0 4px 24px rgba(11, 36, 71, 0.08);
+  --shadow-card-hover: 0 10px 32px rgba(11, 36, 71, 0.14);
+  --container-max: 1280px;
+  --container-narrow: 760px;
+  --header-h: 76px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =================================================
+   RESET / BASE
+================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  color: var(--navy);
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+  font-weight: 700;
+}
+
+p { margin: 0 0 1em; color: var(--text-muted); }
+p:last-child { margin-bottom: 0; }
+
+a { color: var(--blue); text-decoration: none; }
+
+ul, ol { margin: 0; padding: 0; list-style: none; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+input { font-family: inherit; }
+
+svg, [data-lucide] { width: 1em; height: 1em; }
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 20px;
+  z-index: 1000;
+  border-radius: 0 0 var(--radius-sm) 0;
+}
+.skip-link:focus { left: 0; }
+
+:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 2.5rem);
+}
+
+.container-narrow { max-width: var(--container-narrow); }
+
+.section { padding: clamp(3rem, 7vw, 5.5rem) 0; }
+.section-soft { background: var(--bg-soft); }
+
+.section-heading {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto clamp(2rem, 5vw, 3rem);
+}
+
+.section-heading h2 { font-size: clamp(1.6rem, 3.4vw, 2.4rem); }
+.section-sub { font-size: 1.05rem; }
+.section-cta { text-align: center; margin-top: clamp(1.75rem, 4vw, 2.5rem); }
+
+/* =================================================
+   SCROLL REVEAL
+================================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =================================================
+   BUTTONS
+================================================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.85em 1.6em;
+  border-radius: var(--radius-sm);
+  min-height: 44px;
+  transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+  white-space: nowrap;
+}
+.btn-icon { width: 1.05em; height: 1.05em; }
+
+.btn-primary { background: var(--blue); color: #fff; }
+.btn-primary:hover { background: var(--blue-dark); }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--navy);
+  border: 1.5px solid var(--border);
+}
+.btn-secondary:hover { border-color: var(--blue); color: var(--blue); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--blue);
+  border: 1.5px solid var(--blue);
+}
+.btn-outline:hover { background: var(--blue); color: #fff; }
+
+.btn-ghost {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,0.4);
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.22); }
+
+.btn-lg { padding: 0.95em 1.9em; font-size: 1rem; }
+.btn-block { width: 100%; }
+.btn-header { display: none; }
+
+/* =================================================
+   HEADER / NAV
+================================================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: saturate(180%) blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 2.5rem);
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--navy);
+  flex-shrink: 0;
+}
+
+.logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--navy);
+  color: #fff;
+  flex-shrink: 0;
+}
+.logo-mark [data-lucide] { width: 18px; height: 18px; }
+
+.main-nav { display: none; }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.25rem, 2.5vw, 2.25rem);
+}
+
+.nav-link {
+  color: var(--text);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.4em 0;
+  position: relative;
+}
+.nav-link.is-active, .nav-link:hover { color: var(--blue); }
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hamburger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  color: var(--navy);
+}
+.hamburger:hover { background: var(--bg-soft); }
+.hamburger [data-lucide] { width: 24px; height: 24px; }
+
+/* =================================================
+   MOBILE NAV PANEL
+================================================= */
+.mobile-nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 36, 71, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 250;
+}
+.mobile-nav-overlay.is-open { opacity: 1; pointer-events: auto; }
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(85vw, 360px);
+  background: #fff;
+  z-index: 260;
+  padding: 1.25rem clamp(1.25rem, 5vw, 1.75rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -12px 0 32px rgba(11,36,71,0.14);
+  overflow-y: auto;
+}
+.mobile-nav.is-open { transform: translateX(0); }
+
+.mobile-nav-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-close {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  color: var(--navy);
+}
+.mobile-close:hover { background: var(--bg-soft); }
+.mobile-close [data-lucide] { width: 22px; height: 22px; }
+
+.mobile-nav-links { display: flex; flex-direction: column; gap: 0.25rem; }
+
+.mobile-nav-link {
+  display: block;
+  padding: 0.9rem 0.25rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--navy);
+  border-bottom: 1px solid var(--border);
+  min-height: 44px;
+}
+.mobile-nav-link.is-active { color: var(--blue); }
+
+.mobile-pay-btn { width: 100%; }
+
+body.nav-open { overflow: hidden; }
+
+/* =================================================
+   PAGE HERO
+================================================= */
+.page-hero {
+  padding: clamp(2.5rem, 7vw, 5rem) 0 clamp(2.5rem, 6vw, 4rem);
+  background: linear-gradient(180deg, #F7F9FC 0%, #FFFFFF 100%);
+}
+
+.page-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 6vw, 3rem);
+  align-items: center;
+}
+
+.page-hero-copy { order: 1; }
+.page-hero-visual { order: 2; display: flex; justify-content: center; }
+
+.page-hero-title {
+  font-size: clamp(1.9rem, 5.5vw, 3rem);
+  letter-spacing: -0.01em;
+  max-width: 18ch;
+}
+
+.page-hero-sub {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  max-width: 50ch;
+  margin-bottom: 1.75rem;
+}
+
+.page-hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+.page-hero-ctas .btn { flex: 1 1 auto; }
+
+.page-hero-disclaimer {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  max-width: 46ch;
+}
+
+/* Services hero visual: stacked task cards */
+.task-stack {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.task-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  box-shadow: var(--shadow-card);
+}
+
+.task-card-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.task-card-icon [data-lucide] { width: 20px; height: 20px; }
+.task-card-icon.bg-blue { background: var(--blue); }
+.task-card-icon.bg-navy { background: var(--navy); }
+.task-card-icon.bg-green { background: var(--green); }
+.task-card-icon.bg-charcoal { background: var(--navy-soft); }
+
+.task-card-body { flex-grow: 1; min-width: 0; }
+.task-card-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: block;
+}
+.task-card-value {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--navy);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.task-card-check {
+  flex-shrink: 0;
+  color: var(--green);
+}
+
+/* =================================================
+   SERVICE CARDS (main)
+================================================= */
+.services-grid-lg {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.service-card-lg {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.75rem, 4vw, 2.25rem);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.service-card-lg:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-3px);
+}
+
+.service-card-lg-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: rgba(47, 111, 237, 0.1);
+  color: var(--blue);
+  margin-bottom: 1.25rem;
+}
+.service-card-lg-icon [data-lucide] { width: 26px; height: 26px; }
+
+.service-card-lg h3 { font-size: 1.25rem; }
+.service-card-lg > p { font-size: 0.95rem; margin-bottom: 1.25rem; }
+
+.service-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.service-steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6em;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+.service-steps [data-lucide] {
+  color: var(--green);
+  flex-shrink: 0;
+  margin-top: 0.2em;
+}
+
+.service-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  font-style: italic;
+}
+
+.service-card-lg .btn { align-self: flex-start; }
+
+/* =================================================
+   QUICK GUIDE / COMPARISON
+================================================= */
+.quick-guide-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.1rem;
+}
+
+.quick-guide-card {
+  background: var(--navy);
+  color: #fff;
+  border-radius: var(--radius-md);
+  padding: clamp(1.5rem, 3vw, 1.85rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.quick-guide-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(11,36,71,0.25);
+}
+
+.quick-guide-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(47, 111, 237, 0.25);
+  color: #9DBCFF;
+}
+.quick-guide-icon [data-lucide] { width: 20px; height: 20px; }
+
+.quick-guide-card h3 { color: #fff; font-size: 1.05rem; }
+.quick-guide-card p { color: rgba(255,255,255,0.72); font-size: 0.9rem; }
+.quick-guide-card .btn-ghost { align-self: flex-start; margin-top: 0.25rem; }
+
+/* =================================================
+   WHY CHOOSE (reuse)
+================================================= */
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.why-card {
+  text-align: center;
+  padding: clamp(1.25rem, 3vw, 1.5rem);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.why-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--bg-soft);
+  color: var(--navy);
+  margin-bottom: 1rem;
+}
+.why-icon [data-lucide] { width: 24px; height: 24px; }
+
+.why-card h3 { font-size: 1.05rem; }
+.why-card p { font-size: 0.92rem; }
+
+/* =================================================
+   HOW IT WORKS / TIMELINE
+================================================= */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 640px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.timeline-step {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.timeline-num {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-step h3 { font-size: 1.05rem; margin-bottom: 0.25em; }
+.timeline-step p { font-size: 0.92rem; }
+
+/* =================================================
+   SAVINGS
+================================================= */
+.savings-section { background: var(--navy); color: #fff; }
+.savings-inner { text-align: center; max-width: 640px; }
+
+.savings-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: rgba(30, 158, 108, 0.22);
+  color: var(--green);
+  margin-bottom: 1.25rem;
+}
+.savings-icon [data-lucide] { width: 26px; height: 26px; }
+
+.savings-section h2 { color: #fff; }
+.savings-section p { color: rgba(255,255,255,0.78); margin-bottom: 1rem; }
+.savings-fineprint { font-size: 0.8rem; color: rgba(255,255,255,0.55); margin-bottom: 1.75rem; }
+
+/* =================================================
+   PROVIDERS
+================================================= */
+.provider-search {
+  position: relative;
+  max-width: 420px;
+  margin: 0 auto clamp(1.75rem, 4vw, 2.25rem);
+}
+.provider-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+.provider-search input {
+  width: 100%;
+  padding: 0.85em 1em 0.85em 2.5em;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border);
+  background: #fff;
+  font-size: 0.95rem;
+  min-height: 44px;
+}
+.provider-search input:focus { border-color: var(--blue); outline: none; }
+
+.provider-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.provider-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.9em 0.75em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--navy);
+  min-height: 60px;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+.provider-chip:hover { border-color: var(--blue); box-shadow: var(--shadow-card); }
+.provider-chip[hidden] { display: none; }
+
+.provider-empty { text-align: center; padding: 2rem 0; }
+
+.provider-disclaimer {
+  margin-top: clamp(1.75rem, 4vw, 2.5rem);
+  font-size: 0.78rem;
+  text-align: center;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =================================================
+   SUPPORT CTA
+================================================= */
+.support-section { background: var(--bg-soft); }
+.support-inner { text-align: center; }
+.support-copy { max-width: 620px; margin: 0 auto; }
+
+.support-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+.support-ctas .btn { flex: 1 1 auto; }
+
+.support-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.support-contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  color: var(--navy);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.support-contact-item [data-lucide] { color: var(--blue); }
+.support-placeholder-note {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+}
+
+/* =================================================
+   ACCORDION / FAQ
+================================================= */
+.accordion { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.accordion-item {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.accordion-item h3 { margin: 0; }
+
+.accordion-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--navy);
+  min-height: 44px;
+}
+
+.accordion-icon {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+  color: var(--blue);
+}
+.accordion-trigger[aria-expanded="true"] .accordion-icon { transform: rotate(180deg); }
+
+.accordion-panel { padding: 0 1.25rem 1.25rem; }
+.accordion-panel p { font-size: 0.92rem; }
+
+/* =================================================
+   FOOTER
+================================================= */
+.site-footer {
+  background: var(--navy);
+  color: rgba(255,255,255,0.75);
+  padding-top: clamp(2.5rem, 6vw, 4rem);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.25rem;
+  padding-bottom: 2.5rem;
+}
+
+.footer-brand { max-width: 320px; }
+
+.logo-footer {
+  color: #fff;
+  margin-bottom: 0.9rem;
+}
+.logo-footer .logo-mark {
+  background: rgba(255,255,255,0.14);
+  color: #fff;
+}
+
+.footer-brand p { font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-top: 0; }
+
+.footer-col h3 {
+  color: #fff;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(255,255,255,0.14);
+}
+
+.footer-col ul { display: flex; flex-direction: column; gap: 0.7rem; }
+
+.footer-col a, .footer-col span {
+  color: rgba(255,255,255,0.65);
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  transition: color 0.15s ease;
+}
+.footer-col a:hover { color: #fff; }
+
+.footer-disclaimer {
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding: 1.5rem 0;
+}
+.footer-disclaimer p {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+  max-width: 900px;
+  margin: 0;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding: 1.5rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-legal {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+.footer-legal a {
+  color: rgba(255,255,255,0.72);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+.footer-legal a:hover { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+
+.footer-legal-divider {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  display: inline-block;
+}
+
+.footer-copyright {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.5);
+  margin: 0;
+}
+
+/* =================================================
+   BREAKPOINTS
+================================================= */
+@media (min-width: 576px) {
+  .services-grid-lg { grid-template-columns: repeat(2, 1fr); }
+  .quick-guide-grid { grid-template-columns: repeat(2, 1fr); }
+  .provider-grid { grid-template-columns: repeat(3, 1fr); }
+  .page-hero-ctas .btn, .support-ctas .btn { flex: 0 1 auto; }
+}
+
+@media (min-width: 768px) {
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .provider-grid { grid-template-columns: repeat(4, 1fr); }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-bottom { flex-direction: row; justify-content: space-between; align-items: center; }
+  .timeline { flex-direction: row; gap: 2rem; max-width: 100%; }
+  .timeline-step { flex: 1; }
+}
+
+@media (min-width: 992px) {
+  .main-nav { display: block; }
+  .hamburger { display: none; }
+  .btn-header { display: inline-flex; }
+
+  .page-hero-grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(2.5rem, 5vw, 4rem);
+  }
+  .page-hero-visual { justify-content: flex-end; }
+
+  .services-grid-lg { grid-template-columns: repeat(2, 1fr); }
+  .quick-guide-grid { grid-template-columns: repeat(4, 1fr); }
+  .why-grid { grid-template-columns: repeat(4, 1fr); }
+  .provider-grid { grid-template-columns: repeat(6, 1fr); }
+  .footer-grid { grid-template-columns: 1.4fr repeat(3, 1fr); }
+}
+
+@media (min-width: 1200px) {
+  .services-grid-lg { grid-template-columns: repeat(4, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- HEADER -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="Energy Connect home">
+      <span class="logo-mark" aria-hidden="true"><i data-lucide="zap"></i></span>
+      <span class="logo-text">Energy Connect</span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="services.html" class="nav-link is-active" aria-current="page">Services</a></li>
+        <li><a href="faq.html" class="nav-link">FAQ</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a href="index.html#pay-bill" class="btn btn-primary btn-header">Pay Your Bill</a>
+      <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <i data-lucide="menu" class="icon-menu"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE NAV PANEL -->
+<div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" aria-hidden="true">
+  <div class="mobile-nav-top">
+    <a href="index.html" class="logo" aria-label="Energy Connect home">
+      <span class="logo-mark" aria-hidden="true"><i data-lucide="zap"></i></span>
+      <span class="logo-text">Energy Connect</span>
+    </a>
+    <button class="mobile-close" id="mobile-close-btn" aria-label="Close menu">
+      <i data-lucide="x"></i>
+    </button>
+  </div>
+  <ul class="mobile-nav-links">
+    <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+    <li><a href="services.html" class="mobile-nav-link is-active" aria-current="page">Services</a></li>
+    <li><a href="faq.html" class="mobile-nav-link">FAQ</a></li>
+    <li><a href="index.html#contact" class="mobile-nav-link">Contact</a></li>
+  </ul>
+  <a href="index.html#pay-bill" class="btn btn-primary mobile-pay-btn">Pay Your Bill</a>
+</nav>
+
+<main id="main">
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container page-hero-grid">
+      <div class="page-hero-copy">
+        <h1 class="page-hero-title">Utility Services Made Simple</h1>
+        <p class="page-hero-sub">From paying your energy bill to switching providers or starting new service, Energy Connect helps make everyday utility tasks easier to manage.</p>
+        <div class="page-hero-ctas">
+          <a href="index.html#pay-bill" class="btn btn-primary btn-lg">Pay Your Bill</a>
+          <a href="index.html#contact" class="btn btn-secondary btn-lg">
+            <i data-lucide="headset" class="btn-icon"></i>
+            Get Support
+          </a>
+        </div>
+        <p class="page-hero-disclaimer">Service availability and options may vary by location and provider.</p>
+      </div>
+
+      <div class="page-hero-visual">
+        <div class="task-stack">
+          <div class="task-card">
+            <span class="task-card-icon bg-blue"><i data-lucide="credit-card"></i></span>
+            <span class="task-card-body">
+              <span class="task-card-label">Energy Bill</span>
+              <span class="task-card-value">Ready to review</span>
+            </span>
+            <span class="task-card-check"><i data-lucide="check-circle-2"></i></span>
+          </div>
+          <div class="task-card">
+            <span class="task-card-icon bg-navy"><i data-lucide="repeat"></i></span>
+            <span class="task-card-body">
+              <span class="task-card-label">Provider</span>
+              <span class="task-card-value">Options available</span>
+            </span>
+            <span class="task-card-check"><i data-lucide="check-circle-2"></i></span>
+          </div>
+          <div class="task-card">
+            <span class="task-card-icon bg-green"><i data-lucide="plug"></i></span>
+            <span class="task-card-body">
+              <span class="task-card-label">Service Request</span>
+              <span class="task-card-value">In progress</span>
+            </span>
+            <span class="task-card-check"><i data-lucide="check-circle-2"></i></span>
+          </div>
+          <div class="task-card">
+            <span class="task-card-icon bg-charcoal"><i data-lucide="wrench"></i></span>
+            <span class="task-card-body">
+              <span class="task-card-label">Technician Assistance</span>
+              <span class="task-card-value">Request received</span>
+            </span>
+            <span class="task-card-check"><i data-lucide="check-circle-2"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN SERVICES -->
+  <section class="section" id="how-we-help">
+    <div class="container">
+      <div class="section-heading reveal">
+        <h2>How We Can Help</h2>
+        <p class="section-sub">Choose the utility service you need and let Energy Connect help guide you through the process.</p>
+      </div>
+
+      <div class="services-grid-lg">
+        <article class="service-card-lg reveal">
+          <span class="service-card-lg-icon"><i data-lucide="credit-card"></i></span>
+          <h3>Pay Your Energy Bill</h3>
+          <p>Manage your energy bill through a simple online experience and get help navigating your provider's payment options.</p>
+          <ul class="service-steps">
+            <li><i data-lucide="check"></i> Find your provider</li>
+            <li><i data-lucide="check"></i> Review billing information</li>
+            <li><i data-lucide="check"></i> Complete your payment request</li>
+          </ul>
+          <a href="index.html#pay-bill" class="btn btn-outline">Pay Your Bill</a>
+        </article>
+
+        <article class="service-card-lg reveal">
+          <span class="service-card-lg-icon"><i data-lucide="repeat"></i></span>
+          <h3>Switch Your Energy Provider</h3>
+          <p>Explore available provider options and get guidance when you're considering a change to your energy service.</p>
+          <ul class="service-steps">
+            <li><i data-lucide="check"></i> Explore provider options</li>
+            <li><i data-lucide="check"></i> Compare available plans where applicable</li>
+            <li><i data-lucide="check"></i> Request assistance with switching</li>
+          </ul>
+          <p class="service-note">Available options depend on your location and provider.</p>
+          <a href="#quick-guide" class="btn btn-outline">Explore Options</a>
+        </article>
+
+        <article class="service-card-lg reveal">
+          <span class="service-card-lg-icon"><i data-lucide="plug"></i></span>
+          <h3>Start New Service</h3>
+          <p>Need to establish utility service at a new address? Energy Connect can help you understand the steps and available options.</p>
+          <ul class="service-steps">
+            <li><i data-lucide="check"></i> Identify the appropriate provider</li>
+            <li><i data-lucide="check"></i> Understand service requirements</li>
+            <li><i data-lucide="check"></i> Request assistance with starting service</li>
+          </ul>
+          <a href="#quick-guide" class="btn btn-outline">Start a Request</a>
+        </article>
+
+        <article class="service-card-lg reveal">
+          <span class="service-card-lg-icon"><i data-lucide="wrench"></i></span>
+          <h3>Technician Assistance</h3>
+          <p>Need help finding the right type of technician for a utility-related issue? We can help you identify the next step.</p>
+          <ul class="service-steps">
+            <li><i data-lucide="check"></i> Describe your service need</li>
+            <li><i data-lucide="check"></i> Identify the appropriate type of assistance</li>
+            <li><i data-lucide="check"></i> Request technician-related support</li>
+          </ul>
+          <a href="#quick-guide" class="btn btn-outline">Get Technician Help</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK GUIDE -->
+  <section class="section section-soft" id="quick-guide">
+    <div class="container">
+      <div class="section-heading reveal">
+        <h2>Which Service Do You Need?</h2>
+      </div>
+
+      <div class="quick-guide-grid">
+        <div class="quick-guide-card reveal">
+          <span class="quick-guide-icon"><i data-lucide="credit-card"></i></span>
+          <h3>I need to pay a bill</h3>
+          <p>Find your provider and continue with your bill payment request.</p>
+          <a href="index.html#pay-bill" class="btn btn-ghost">Pay a Bill</a>
+        </div>
+        <div class="quick-guide-card reveal">
+          <span class="quick-guide-icon"><i data-lucide="repeat"></i></span>
+          <h3>I want to change providers</h3>
+          <p>Explore provider options available for your location.</p>
+          <a href="#providers" class="btn btn-ghost">Switch Provider</a>
+        </div>
+        <div class="quick-guide-card reveal">
+          <span class="quick-guide-icon"><i data-lucide="home"></i></span>
+          <h3>I'm moving or starting service</h3>
+          <p>Get help understanding how to start utility service.</p>
+          <a href="index.html#contact" class="btn btn-ghost">Start Service</a>
+        </div>
+        <div class="quick-guide-card reveal">
+          <span class="quick-guide-icon"><i data-lucide="wrench"></i></span>
+          <h3>I need technical help</h3>
+          <p>Tell us what kind of utility assistance you need.</p>
+          <a href="index.html#contact" class="btn btn-ghost">Find Assistance</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE -->
+  <section class="section" id="why-choose">
+    <div class="container">
+      <div class="section-heading reveal">
+        <h2>Why Choose Energy Connect?</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <span class="why-icon"><i data-lucide="layout-grid"></i></span>
+          <h3>One Convenient Place</h3>
+          <p>Manage common utility-related tasks from one simple online experience.</p>
+        </div>
+        <div class="why-card reveal">
+          <span class="why-icon"><i data-lucide="compass"></i></span>
+          <h3>Clear Guidance</h3>
+          <p>Understand your available options and the next steps for your request.</p>
+        </div>
+        <div class="why-card reveal">
+          <span class="why-icon"><i data-lucide="handshake"></i></span>
+          <h3>Provider Assistance</h3>
+          <p>Get help navigating provider-related services and requests.</p>
+        </div>
+        <div class="why-card reveal">
+          <span class="why-icon"><i data-lucide="life-buoy"></i></span>
+          <h3>Customer Support</h3>
+          <p>Have questions? Our support team can help you understand what to do next.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section section-soft" id="how-it-works">
+    <div class="container">
+      <div class="section-heading reveal">
+        <h2>Getting Started Is Simple</h2>
+      </div>
+      <ol class="timeline">
+        <li class="timeline-step reveal">
+          <span class="timeline-num">1</span>
+          <div>
+            <h3>Choose a Service</h3>
+            <p>Select the utility service you need help with.</p>
+          </div>
+        </li>
+        <li class="timeline-step reveal">
+          <span class="timeline-num">2</span>
+          <div>
+            <h3>Provide Your Information</h3>
+            <p>Share the information needed to understand and process your request.</p>
+          </div>
+        </li>
+        <li class="timeline-step reveal">
+          <span class="timeline-num">3</span>
+          <div>
+            <h3>Complete Your Request</h3>
+            <p>Review the available next steps and continue with your selected service.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- SAVINGS -->
+  <section class="section savings-section">
+    <div class="container savings-inner reveal">
+      <div class="savings-icon"><i data-lucide="trending-up"></i></div>
+      <h2>Explore Ways to Save</h2>
+      <p>Depending on your location and available provider options, you may have opportunities to explore different plans, providers, or service options.</p>
+      <p class="savings-fineprint">Potential savings vary by provider, location, plan, usage, and eligibility.</p>
+      <a href="#providers" class="btn btn-primary btn-lg">Explore Your Options</a>
+    </div>
+  </section>
+
+  <!-- PROVIDERS -->
+  <section class="section section-soft" id="providers">
+    <div class="container">
+      <div class="section-heading reveal">
+        <h2>Looking for Your Energy Provider?</h2>
+        <p class="section-sub">Energy Connect can help you identify the appropriate utility provider and understand the next step for your service request.</p>
+      </div>
+
+      <div class="provider-search">
+        <i data-lucide="search" class="provider-search-icon"></i>
+        <input type="search" id="provider-search-input" placeholder="Search providers" aria-label="Search providers">
+      </div>
+
+      <div class="provider-grid" id="provider-grid">
+        <span class="provider-chip">PG&amp;E</span>
+        <span class="provider-chip">Duke Energy</span>
+        <span class="provider-chip">Southern California Edison</span>
+        <span class="provider-chip">Consumers Energy</span>
+        <span class="provider-chip">Dominion Energy</span>
+        <span class="provider-chip">Florida Power &amp; Light</span>
+        <span class="provider-chip">DTE Energy</span>
+        <span class="provider-chip">Xcel Energy</span>
+        <span class="provider-chip">Ameren</span>
+        <span class="provider-chip">Georgia Power</span>
+        <span class="provider-chip">Entergy</span>
+        <span class="provider-chip">American Electric Power</span>
+        <span class="provider-chip">FirstEnergy</span>
+        <span class="provider-chip">National Grid</span>
+        <span class="provider-chip">Con Edison</span>
+        <span class="provider-chip">PSE&amp;G</span>
+        <span class="provider-chip">Baltimore Gas and Electric</span>
+        <span class="provider-chip">CenterPoint Energy</span>
+        <span class="provider-chip">NV Energy</span>
+        <span class="provider-chip">Evergy</span>
+        <span class="provider-chip">Southern California Gas Company</span>
+        <span class="provider-chip">Atmos Energy</span>
+      </div>
+      <p class="provider-empty" id="provider-empty" hidden>No providers match your search.</p>
+
+      <div class="section-cta">
+        <a href="index.html#providers" class="btn btn-outline">View Providers</a>
+      </div>
+
+      <p class="provider-disclaimer">Provider names, logos, and trademarks belong to their respective owners and are displayed for identification purposes only. Availability of services may vary by location.</p>
+    </div>
+  </section>
+
+  <!-- SUPPORT CTA -->
+  <section class="section support-section" id="support">
+    <div class="container support-inner">
+      <div class="support-copy reveal">
+        <h2>Need Help Choosing the Right Service?</h2>
+        <p>Our support team can help you understand which Energy Connect service may be right for your request.</p>
+        <div class="support-ctas">
+          <a href="index.html#contact" class="btn btn-primary btn-lg">
+            <i data-lucide="headset" class="btn-icon"></i>
+            Contact Support
+          </a>
+          <a href="index.html#pay-bill" class="btn btn-secondary btn-lg">
+            <i data-lucide="credit-card" class="btn-icon"></i>
+            Pay Your Bill
+          </a>
+        </div>
+        <div class="support-contacts">
+          <a href="tel:+18888814446" class="support-contact-item">
+            <i data-lucide="phone-call"></i> (888) 881-4446
+          </a>
+          <a href="mailto:support@energyconnect.com" class="support-contact-item">
+            <i data-lucide="mail"></i> support@energyconnect.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ PREVIEW -->
+  <section class="section" id="faq-preview">
+    <div class="container container-narrow">
+      <div class="section-heading reveal">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="accordion" id="faq-accordion">
+        <div class="accordion-item">
+          <h3>
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="sfaq-1" id="sfaq-1-btn">
+              What services does Energy Connect provide?
+              <i data-lucide="chevron-down" class="accordion-icon"></i>
+            </button>
+          </h3>
+          <div class="accordion-panel" id="sfaq-1" role="region" aria-labelledby="sfaq-1-btn" hidden>
+            <p>Energy Connect helps customers pay energy bills, explore provider options, start new service, and request technician assistance from one convenient place.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3>
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="sfaq-2" id="sfaq-2-btn">
+              Can I pay my energy bill through Energy Connect?
+              <i data-lucide="chevron-down" class="accordion-icon"></i>
+            </button>
+          </h3>
+          <div class="accordion-panel" id="sfaq-2" role="region" aria-labelledby="sfaq-2-btn" hidden>
+            <p>Yes. You can find your provider and follow the guided steps to submit a bill payment request through our platform.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3>
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="sfaq-3" id="sfaq-3-btn">
+              Can Energy Connect help me switch providers?
+              <i data-lucide="chevron-down" class="accordion-icon"></i>
+            </button>
+          </h3>
+          <div class="accordion-panel" id="sfaq-3" role="region" aria-labelledby="sfaq-3-btn" hidden>
+            <p>We can help you explore available provider options in your area and guide you through the general switching process.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3>
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="sfaq-4" id="sfaq-4-btn">
+              Are all services available in every location?
+              <i data-lucide="chevron-down" class="accordion-icon"></i>
+            </button>
+          </h3>
+          <div class="accordion-panel" id="sfaq-4" role="region" aria-labelledby="sfaq-4-btn" hidden>
+            <p>Availability of providers and services can vary by location. We'll help you understand what's available for your specific area.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-cta">
+        <a href="faq.html" class="btn btn-outline">View All FAQs</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col footer-brand">
+      <a href="index.html" class="logo logo-footer">
+        <span class="logo-mark" aria-hidden="true"><i data-lucide="zap"></i></span>
+        <span class="logo-text">Energy Connect</span>
+      </a>
+      <p>Helping customers navigate everyday energy and utility services through one convenient experience.</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="index.html#pay-bill">Pay Your Bill</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Services</h3>
+      <ul>
+        <li><a href="index.html#pay-bill">Pay Your Bill</a></li>
+        <li><a href="#quick-guide">Switch Provider</a></li>
+        <li><a href="#quick-guide">Start New Service</a></li>
+        <li><a href="#quick-guide">Technician Assistance</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Support</h3>
+      <ul>
+        <li><a href="tel:+18888814446">Call Us — (888) 881-4446</a></li>
+        <li><a href="mailto:support@energyconnect.com">Email Support</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer-disclaimer">
+    <p>Energy Connect is an independent service platform and is not a government agency or an official utility provider unless expressly stated. Provider names, logos, and trademarks belong to their respective owners.</p>
+  </div>
+
+  <div class="container footer-bottom">
+    <div class="footer-legal">
+      <a href="privacy.html">Privacy Policy</a>
+      <span class="footer-legal-divider" aria-hidden="true"></span>
+      <a href="terms.html">Terms &amp; Conditions</a>
+    </div>
+    <p class="footer-copyright">© 2026 Energy Connect. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  if (window.lucide) { lucide.createIcons(); }
+
+  /* MOBILE NAVIGATION */
+  var hamburgerBtn = document.getElementById('hamburger-btn');
+  var mobileNav = document.getElementById('mobile-nav');
+  var mobileOverlay = document.getElementById('mobile-nav-overlay');
+  var mobileCloseBtn = document.getElementById('mobile-close-btn');
+  var mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .mobile-pay-btn');
+  var body = document.body;
+
+  function openMobileNav() {
+    mobileNav.classList.add('is-open');
+    mobileOverlay.classList.add('is-open');
+    mobileNav.setAttribute('aria-hidden', 'false');
+    hamburgerBtn.setAttribute('aria-expanded', 'true');
+    body.classList.add('nav-open');
+    mobileCloseBtn.focus();
+  }
+
+  function closeMobileNav() {
+    mobileNav.classList.remove('is-open');
+    mobileOverlay.classList.remove('is-open');
+    mobileNav.setAttribute('aria-hidden', 'true');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+    body.classList.remove('nav-open');
+    hamburgerBtn.focus();
+  }
+
+  if (hamburgerBtn) {
+    hamburgerBtn.addEventListener('click', function () {
+      var isOpen = mobileNav.classList.contains('is-open');
+      if (isOpen) { closeMobileNav(); } else { openMobileNav(); }
+    });
+  }
+  if (mobileCloseBtn) { mobileCloseBtn.addEventListener('click', closeMobileNav); }
+  if (mobileOverlay) { mobileOverlay.addEventListener('click', closeMobileNav); }
+  mobileNavLinks.forEach(function (link) { link.addEventListener('click', closeMobileNav); });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) { closeMobileNav(); }
+  });
+
+  /* FAQ ACCORDION */
+  var accordionTriggers = document.querySelectorAll('.accordion-trigger');
+  accordionTriggers.forEach(function (trigger) {
+    trigger.addEventListener('click', function () {
+      var expanded = trigger.getAttribute('aria-expanded') === 'true';
+      var panelId = trigger.getAttribute('aria-controls');
+      var panel = document.getElementById(panelId);
+      trigger.setAttribute('aria-expanded', String(!expanded));
+      if (panel) { panel.hidden = expanded; }
+    });
+  });
+
+  /* PROVIDER SEARCH */
+  var providerInput = document.getElementById('provider-search-input');
+  var providerGrid = document.getElementById('provider-grid');
+  var providerEmpty = document.getElementById('provider-empty');
+
+  if (providerInput && providerGrid) {
+    var providerChips = providerGrid.querySelectorAll('.provider-chip');
+    providerInput.addEventListener('input', function () {
+      var query = providerInput.value.trim().toLowerCase();
+      var visibleCount = 0;
+      providerChips.forEach(function (chip) {
+        var matches = chip.textContent.toLowerCase().indexOf(query) !== -1;
+        chip.hidden = !matches;
+        if (matches) visibleCount++;
+      });
+      if (providerEmpty) { providerEmpty.hidden = visibleCount !== 0; }
+    });
+  }
+
+  /* SCROLL REVEAL */
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && revealEls.length) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(function (el) { observer.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+});
+</script>
+</body>
+</html>
