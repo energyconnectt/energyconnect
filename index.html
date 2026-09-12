@@ -394,26 +394,33 @@ body.nav-open {
   grid-template-columns: 1fr;
   gap: clamp(2rem, 6vw, 3rem);
   align-items: center;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
 }
 
 .hero-copy { order: 1; }
-.hero-visual { order: 2; }
 
 .hero-title {
   font-size: clamp(1.9rem, 5.5vw, 3.2rem);
   letter-spacing: -0.01em;
-  max-width: 16ch;
+  max-width: 20ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-sub {
   font-size: clamp(1rem, 2vw, 1.15rem);
   max-width: 46ch;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 1.75rem;
 }
 
 .hero-ctas {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.85rem;
   margin-bottom: 1.5rem;
 }
@@ -423,6 +430,7 @@ body.nav-open {
 .hero-phone {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5em;
   font-weight: 600;
   color: var(--navy);
@@ -434,6 +442,7 @@ body.nav-open {
 .trust-line {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1.25rem;
 }
 
@@ -446,145 +455,6 @@ body.nav-open {
   color: var(--text-muted);
 }
 .trust-line [data-lucide] { color: var(--green); }
-
-/* Dashboard mockup */
-.hero-visual { display: flex; justify-content: center; }
-
-.dashboard-card {
-  width: 100%;
-  max-width: 380px;
-  background: var(--navy);
-  color: #fff;
-  border-radius: var(--radius-lg);
-  padding: clamp(1.25rem, 4vw, 1.75rem);
-  box-shadow: 0 20px 48px rgba(11,36,71,0.28);
-}
-
-.dashboard-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.dashboard-tag {
-  font-family: 'Sora', sans-serif;
-  font-weight: 600;
-  font-size: 0.95rem;
-}
-
-.dashboard-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4em;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #fff;
-  background: rgba(30, 158, 108, 0.28);
-  padding: 0.35em 0.75em;
-  border-radius: 999px;
-}
-.dashboard-status [data-lucide] { color: var(--green); }
-
-.dashboard-bill {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-  margin-bottom: 1.5rem;
-}
-
-.dashboard-label {
-  font-size: 0.82rem;
-  color: rgba(255,255,255,0.65);
-}
-
-.dashboard-amount {
-  font-family: 'Sora', sans-serif;
-  font-weight: 700;
-  font-size: clamp(2rem, 6vw, 2.6rem);
-  letter-spacing: -0.02em;
-}
-
-.dashboard-due {
-  font-size: 0.88rem;
-  color: rgba(255,255,255,0.7);
-}
-
-.dashboard-pay-btn {
-  width: 100%;
-  background: var(--blue);
-  color: #fff;
-  font-family: 'Sora', sans-serif;
-  font-weight: 600;
-  padding: 0.9em 1.2em;
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5em;
-  min-height: 44px;
-  margin-bottom: 1.5rem;
-  transition: background-color 0.18s ease;
-}
-.dashboard-pay-btn:hover { background: var(--blue-dark); }
-
-.dashboard-mini-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid rgba(255,255,255,0.14);
-}
-
-.mini-stat-label {
-  display: block;
-  font-size: 0.72rem;
-  color: rgba(255,255,255,0.6);
-  margin-bottom: 0.5rem;
-}
-
-.mini-stat-value {
-  display: block;
-  font-family: 'Sora', sans-serif;
-  font-weight: 600;
-  font-size: 0.95rem;
-  margin-bottom: 0.5rem;
-}
-
-.mini-bar {
-  height: 6px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.15);
-  overflow: hidden;
-}
-.mini-bar span {
-  display: block;
-  height: 100%;
-  background: var(--blue);
-  border-radius: 999px;
-}
-
-.mini-history {
-  display: flex;
-  align-items: flex-end;
-  gap: 4px;
-  height: 32px;
-}
-.mini-history-bar {
-  flex: 1;
-  background: var(--green);
-  border-radius: 3px 3px 0 0;
-  opacity: 0.85;
-}
-
-.dashboard-disclaimer {
-  margin-top: 1rem;
-  font-size: 0.7rem;
-  color: rgba(255,255,255,0.45);
-  text-align: center;
-}
 
 /* =================================================
    BENEFITS
@@ -1093,13 +963,6 @@ body.nav-open {
   .hamburger { display: none; }
   .btn-header { display: inline-flex; }
 
-  .hero-grid {
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: clamp(2.5rem, 5vw, 4rem);
-  }
-  .hero-copy { order: 1; }
-  .hero-visual { order: 2; justify-content: flex-end; }
-
   .benefits-grid { grid-template-columns: repeat(4, 1fr); }
   .services-grid { grid-template-columns: repeat(4, 1fr); }
   .why-grid { grid-template-columns: repeat(4, 1fr); }
@@ -1256,6 +1119,90 @@ body.nav-open {
 }
 .popup-later:hover { color: var(--navy); }
 
+/* =================================================
+   STICKY CALL BUTTON
+================================================= */
+.sticky-call-btn {
+  position: fixed;
+  right: clamp(1rem, 4vw, 1.75rem);
+  bottom: clamp(1rem, 4vw, 1.75rem);
+  z-index: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65em;
+  background: var(--blue);
+  color: #fff;
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.85em 1.4em;
+  border-radius: 999px;
+  box-shadow: 0 10px 28px rgba(11, 36, 71, 0.3);
+  min-height: 44px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+.sticky-call-btn:hover {
+  background: var(--blue-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(11, 36, 71, 0.36);
+}
+.sticky-call-btn [data-lucide] {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.sticky-call-btn .sticky-call-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  text-align: left;
+}
+.sticky-call-btn .sticky-call-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.85);
+}
+.sticky-call-btn .sticky-call-number {
+  font-size: 0.98rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Ring animation to draw attention without being obnoxious */
+.sticky-call-btn-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: var(--blue);
+  opacity: 0.55;
+  animation: sticky-pulse 2.4s ease-out infinite;
+  z-index: -1;
+}
+
+@keyframes sticky-pulse {
+  0% { transform: scale(1); opacity: 0.45; }
+  70% { transform: scale(1.35); opacity: 0; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sticky-call-btn-ring { animation: none; display: none; }
+}
+
+/* On very small screens, tighten padding but keep the number visible */
+@media (max-width: 360px) {
+  .sticky-call-btn {
+    padding: 0.75em 1.1em;
+    font-size: 0.88rem;
+  }
+  .sticky-call-btn .sticky-call-number { font-size: 0.9rem; }
+}
+
+/* Keep the button clear of the mobile nav panel when open */
+body.nav-open .sticky-call-btn { display: none; }
+
 </style>
 </head>
 <body>
@@ -1336,48 +1283,6 @@ body.nav-open {
           <li><i data-lucide="check-circle-2"></i> Secure</li>
         </ul>
       </div>
-
-      <div class="hero-visual" aria-hidden="false">
-        <div class="dashboard-card" role="img" aria-label="Sample energy account dashboard showing a current bill, due date, and pay now button">
-          <div class="dashboard-header">
-            <span class="dashboard-tag">Energy Account</span>
-            <span class="dashboard-status">
-              <i data-lucide="shield-check"></i>
-              Ready to Pay
-            </span>
-          </div>
-
-          <div class="dashboard-bill">
-            <span class="dashboard-label">Current Bill</span>
-            <span class="dashboard-amount">$142.85</span>
-            <span class="dashboard-due">Due September 25</span>
-          </div>
-
-          <button class="dashboard-pay-btn" type="button">
-            Pay Now
-            <i data-lucide="arrow-right"></i>
-          </button>
-
-          <div class="dashboard-mini-stats">
-            <div class="mini-stat">
-              <span class="mini-stat-label">Monthly Usage</span>
-              <span class="mini-stat-value">612 kWh</span>
-              <div class="mini-bar"><span style="width:64%"></span></div>
-            </div>
-            <div class="mini-stat">
-              <span class="mini-stat-label">Payment History</span>
-              <div class="mini-history">
-                <span class="mini-history-bar" style="height:40%"></span>
-                <span class="mini-history-bar" style="height:70%"></span>
-                <span class="mini-history-bar" style="height:55%"></span>
-                <span class="mini-history-bar" style="height:85%"></span>
-                <span class="mini-history-bar" style="height:60%"></span>
-              </div>
-            </div>
-          </div>
-          <p class="dashboard-disclaimer">Sample data for illustration only</p>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -1449,28 +1354,28 @@ body.nav-open {
       <div class="services-grid">
         <article class="service-card">
           <span class="service-icon"><i data-lucide="credit-card"></i></span>
-          <h3>Pay Energy Bills</h3>
+          <h3>Energy Bill Payment</h3>
           <p>Conveniently submit payments for supported electricity and natural gas providers.</p>
           <a href="contact.html#call-section" class="btn btn-outline">Pay Your Bill</a>
         </article>
 
         <article class="service-card">
           <span class="service-icon"><i data-lucide="repeat"></i></span>
-          <h3>Switch Your Provider</h3>
-          <p>Get assistance exploring available energy-provider options and switching services.</p>
-          <a href="contact.html#call-section" class="btn btn-outline">Explore Options</a>
+          <h3>Energy Bill Help</h3>
+          <p>Get assistance understanding your bill, exploring provider options, or switching services.</p>
+          <a href="contact.html#call-section" class="btn btn-outline">Get Bill Help</a>
         </article>
 
         <article class="service-card">
           <span class="service-icon"><i data-lucide="plug"></i></span>
-          <h3>Start New Service</h3>
-          <p>Moving or starting utility service? Get help setting up available electricity or natural gas services.</p>
+          <h3>Energy New Connection</h3>
+          <p>Moving or starting utility service? Get help setting up available electricity or natural gas connections.</p>
           <a href="contact.html#call-section" class="btn btn-outline">Start Service</a>
         </article>
 
         <article class="service-card">
           <span class="service-icon"><i data-lucide="wrench"></i></span>
-          <h3>Technician Assistance</h3>
+          <h3>Energy Service Assistance</h3>
           <p>Need service assistance? Request help and get connected with available service professionals.</p>
           <a href="contact.html#call-section" class="btn btn-outline">Get Help</a>
         </article>
@@ -1751,10 +1656,10 @@ body.nav-open {
     <div class="footer-col">
       <h3>Services</h3>
       <ul>
-        <li><a href="contact.html#call-section">Pay Your Bill</a></li>
-        <li><a href="contact.html#call-section">Switch Provider</a></li>
-        <li><a href="contact.html#call-section">New Service</a></li>
-        <li><a href="contact.html#call-section">Technician Assistance</a></li>
+        <li><a href="contact.html#call-section">Energy Bill Payment</a></li>
+        <li><a href="contact.html#call-section">Energy Bill Help</a></li>
+        <li><a href="contact.html#call-section">Energy New Connection</a></li>
+        <li><a href="contact.html#call-section">Energy Service Assistance</a></li>
       </ul>
     </div>
 
@@ -1781,6 +1686,16 @@ body.nav-open {
     <p class="footer-copyright">© 2026 Energy Connect. All rights reserved.</p>
   </div>
 </footer>
+
+<!-- STICKY CALL BUTTON -->
+<a href="tel:+18888814446" class="sticky-call-btn" aria-label="Call Energy Connect at (888) 881-4446">
+  <span class="sticky-call-btn-ring" aria-hidden="true"></span>
+  <i data-lucide="phone-call" aria-hidden="true"></i>
+  <span class="sticky-call-text">
+    <span class="sticky-call-label">Call Now</span>
+    <span class="sticky-call-number">(888) 881-4446</span>
+  </span>
+</a>
 
 <!-- WELCOME / SAVINGS POPUP -->
 <div class="popup-overlay" id="popup-overlay">
