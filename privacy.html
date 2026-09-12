@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- ============================================
+     1. DOCUMENT HEAD
+============================================ -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | Energy Connect</title>
+<meta name="description" content="Learn how Energy Connect collects, uses, shares, and protects information when customers use our website and utility-related services.">
+<meta name="theme-color" content="#0B2447">
+<link rel="canonical" href="https://www.example.com/privacy.html">
+<meta property="og:title" content="Privacy Policy | Energy Connect">
+<meta property="og:description" content="Learn how Energy Connect collects, uses, shares, and protects information when customers use our website and utility-related services.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+
+<style>
+/* ============================================
+   2. CSS VARIABLES
+============================================ */
+:root {
+  --navy: #0B2447;
+  --navy-soft: #16345F;
+  --blue: #2F6FED;
+  --blue-dark: #2058C9;
+  --green: #1E9E6C;
+  --bg: #FFFFFF;
+  --bg-soft: #F4F6F9;
+  --text: #16202E;
+  --text-muted: #5B6B7F;
+  --border: #E3E8EF;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --shadow-card: 0 4px 24px rgba(11, 36, 71, 0.08);
+  --shadow-card-hover: 0 10px 32px rgba(11, 36, 71, 0.14);
+  --container-max: 1280px;
+  --container-narrow: 820px;
+  --header-h: 76px;
+}
+
+/* ============================================
+   3. GLOBAL STYLES
+============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+  -webkit-text-size-adjust: 100%;
+}
+
+html, body { max-width: 100%; overflow-x: clip; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  color: var(--navy);
+  line-height: 1.25;
+  margin: 0 0 0.55em;
+  font-weight: 700;
+}
+
+p { margin: 0 0 1em; color: var(--text-muted); }
+p:last-child { margin-bottom: 0; }
+
+a { color: var(--blue); text-decoration: none; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+img { max-width: 100%; height: auto; display: block; }
+
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+svg, [data-lucide] { width: 1em; height: 1em; }
+
+.skip-link {
+  position: absolute; left: -9999px; top: 0;
+  background: var(--navy); color: #fff;
+  padding: 12px 20px; z-index: 1000;
+  border-radius: 0 0 var(--radius-sm) 0;
+}
+.skip-link:focus { left: 0; }
+
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 2.5rem);
+}
+.container-narrow { max-width: var(--container-narrow); }
+
+.section { padding: clamp(2.5rem, 6vw, 4.5rem) 0; }
+.section-soft { background: var(--bg-soft); }
+
+.eyebrow {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 0.85rem;
+}
+
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.85em 1.6em;
+  border-radius: var(--radius-sm);
+  min-height: 44px;
+  transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+  white-space: nowrap;
+}
+.btn-icon { width: 1.05em; height: 1.05em; }
+
+.btn-primary { background: var(--blue); color: #fff; }
+.btn-primary:hover { background: var(--blue-dark); }
+
+.btn-secondary { background: transparent; color: var(--navy); border: 1.5px solid var(--border); }
+.btn-secondary:hover { border-color: var(--blue); color: var(--blue); }
+
+.btn-outline { background: transparent; color: var(--blue); border: 1.5px solid var(--blue); }
+.btn-outline:hover { background: var(--blue); color: #fff; }
+
+.btn-lg { padding: 1em 2.1em; font-size: 1.05rem; min-height: 52px; }
+.btn-header { display: none; }
+
+/* ============================================
+   4. STICKY HEADER
+============================================ */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: saturate(180%) blur(10px);
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow 0.2s ease;
+}
+.header.is-scrolled { box-shadow: 0 6px 20px rgba(11,36,71,0.08); }
+
+.header-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 2.5rem);
+  height: var(--header-h);
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+}
+
+.logo {
+  display: inline-flex; align-items: center; gap: 0.6em;
+  font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.15rem;
+  color: var(--navy); flex-shrink: 0;
+}
+
+.logo-mark {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 10px;
+  background: var(--navy); color: #fff; flex-shrink: 0;
+}
+.logo-mark [data-lucide] { width: 18px; height: 18px; }
+
+.main-nav { display: none; }
+
+.nav-links { display: flex; align-items: center; gap: clamp(1.25rem, 2.5vw, 2.25rem); }
+
+.nav-link { color: var(--text); font-weight: 500; font-size: 0.95rem; padding: 0.4em 0; position: relative; }
+.nav-link.is-active, .nav-link:hover { color: var(--blue); }
+
+.header-actions { display: flex; align-items: center; gap: 0.75rem; }
+
+.hamburger {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: var(--radius-sm); color: var(--navy);
+}
+.hamburger:hover { background: var(--bg-soft); }
+.hamburger [data-lucide] { width: 24px; height: 24px; }
+
+/* Mobile nav panel */
+.mobile-nav-overlay {
+  position: fixed; inset: 0;
+  background: rgba(11, 36, 71, 0.45);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s ease; z-index: 1100;
+}
+.mobile-nav-overlay.is-open { opacity: 1; pointer-events: auto; }
+
+.mobile-nav {
+  position: fixed; top: 0; right: 0; bottom: 0;
+  width: min(85vw, 360px);
+  background: #fff; z-index: 1200;
+  padding: 1.25rem clamp(1.25rem, 5vw, 1.75rem);
+  display: flex; flex-direction: column; gap: 1.5rem;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -12px 0 32px rgba(11,36,71,0.14);
+  overflow-y: auto;
+}
+.mobile-nav.is-open { transform: translateX(0); }
+
+.mobile-nav-top { display: flex; align-items: center; justify-content: space-between; }
+
+.mobile-close {
+  width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center;
+  border-radius: var(--radius-sm); color: var(--navy);
+}
+.mobile-close:hover { background: var(--bg-soft); }
+.mobile-close [data-lucide] { width: 22px; height: 22px; }
+
+.mobile-nav-links { display: flex; flex-direction: column; gap: 0.25rem; }
+
+.mobile-nav-link {
+  display: block; padding: 0.9rem 0.25rem;
+  font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1.05rem;
+  color: var(--navy); border-bottom: 1px solid var(--border); min-height: 44px;
+}
+.mobile-nav-link.is-active { color: var(--blue); }
+
+.mobile-pay-btn { width: 100%; }
+body.nav-open { overflow: hidden; }
+
+/* ============================================
+   5. PRIVACY HERO
+============================================ */
+.policy-hero {
+  padding: clamp(2.25rem, 6vw, 4rem) 0 clamp(1.75rem, 4vw, 2.5rem);
+  background: linear-gradient(180deg, #F7F9FC 0%, #FFFFFF 100%);
+  text-align: center;
+}
+
+.policy-hero-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 56px; height: 56px; border-radius: 16px;
+  background: rgba(47, 111, 237, 0.1); color: var(--blue);
+  margin-bottom: 1.1rem;
+}
+.policy-hero-icon [data-lucide] { width: 26px; height: 26px; }
+
+.policy-hero h1 { font-size: clamp(1.9rem, 5vw, 2.8rem); }
+
+.policy-hero-sub {
+  max-width: 700px;
+  margin: 0 auto 1.1rem;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+}
+
+.policy-updated {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--navy);
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  padding: 0.5em 1em;
+  border-radius: 999px;
+}
+.policy-updated [data-lucide] { width: 15px; height: 15px; color: var(--blue); }
+
+/* Legal notice */
+.legal-notice {
+  max-width: var(--container-narrow);
+  margin: clamp(1.5rem, 4vw, 2.25rem) auto 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--blue);
+  border-radius: var(--radius-sm);
+  padding: 1.1rem 1.4rem;
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  text-align: left;
+}
+.legal-notice-icon { color: var(--blue); flex-shrink: 0; margin-top: 0.15rem; }
+.legal-notice p { font-size: 0.92rem; color: var(--text); margin: 0; }
+
+/* ============================================
+   6. TABLE OF CONTENTS
+============================================ */
+.toc-wrap {
+  padding: clamp(2rem, 5vw, 3rem) 0 0;
+}
+
+.toc-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: clamp(1.5rem, 3vw, 2rem);
+  box-shadow: var(--shadow-card);
+}
+
+.toc-card h2 {
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+}
+
+.toc-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+.toc-list a {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  color: var(--text);
+  font-size: 0.92rem;
+  font-weight: 500;
+  padding: 0.55em 0.65em;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.toc-list a:hover { background: var(--bg-soft); color: var(--blue); }
+.toc-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--bg-soft); color: var(--navy);
+  font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.72rem;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   7. POLICY BODY
+============================================ */
+.policy-body { padding: clamp(2rem, 5vw, 3rem) 0 clamp(2.5rem, 6vw, 4rem); }
+
+.policy-section {
+  padding: clamp(1.75rem, 4vw, 2.25rem) 0;
+  border-bottom: 1px solid var(--border);
+  scroll-margin-top: 90px;
+}
+.policy-section:last-child { border-bottom: none; }
+
+.policy-section h2 {
+  font-size: clamp(1.25rem, 2.8vw, 1.55rem);
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+}
+
+.policy-section-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 10px;
+  background: var(--navy); color: #fff;
+  font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.92rem;
+  flex-shrink: 0;
+}
+
+.policy-section h3 {
+  font-size: 1.02rem;
+  margin-top: 1.25rem;
+}
+
+.policy-section p,
+.policy-section li {
+  font-size: 0.98rem;
+  color: var(--text-muted);
+}
+
+.policy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin: 0.75rem 0 1rem;
+}
+.policy-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6em;
+  padding-left: 0.1rem;
+}
+.policy-list li [data-lucide] {
+  color: var(--blue);
+  flex-shrink: 0;
+  margin-top: 0.25em;
+  width: 16px; height: 16px;
+}
+
+.policy-callout {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+  margin-top: 1rem;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+
+/* Contact card inside section 11 */
+.privacy-contact-card {
+  margin-top: 1.25rem;
+  background: var(--navy);
+  color: #fff;
+  border-radius: var(--radius-md);
+  padding: clamp(1.5rem, 3vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+.privacy-contact-card p { color: rgba(255,255,255,0.78); }
+.privacy-contact-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #fff;
+}
+.privacy-contact-phone:hover { color: #9DBCFF; }
+.privacy-contact-actions { display: flex; flex-wrap: wrap; gap: 0.85rem; }
+.privacy-contact-actions .btn { flex: 1 1 auto; }
+.privacy-contact-note { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin: 0; }
+
+/* ============================================
+   8. QUICK LINKS
+============================================ */
+.quick-links-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.quick-link-card {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.4rem;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.quick-link-card:hover { box-shadow: var(--shadow-card-hover); transform: translateY(-2px); }
+
+.quick-link-icon {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: rgba(47,111,237,0.1); color: var(--blue);
+  display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.quick-link-icon [data-lucide] { width: 20px; height: 20px; }
+
+.quick-link-card h3 { font-size: 0.98rem; margin-bottom: 0.15em; }
+.quick-link-card span { font-size: 0.85rem; color: var(--text-muted); }
+
+/* ============================================
+   9. FINAL CTA
+============================================ */
+.final-cta {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-soft) 100%);
+  color: #fff;
+  padding: clamp(3rem, 7vw, 5rem) 0;
+}
+.final-cta-inner { text-align: center; max-width: 620px; }
+.final-cta h2 { color: #fff; }
+.final-cta p { color: rgba(255,255,255,0.78); margin-bottom: 1.75rem; }
+.final-cta-buttons { display: flex; flex-wrap: wrap; gap: 0.85rem; justify-content: center; }
+.final-cta-buttons .btn { flex: 1 1 auto; }
+
+/* ============================================
+   10. FOOTER
+============================================ */
+.site-footer { background: var(--navy); color: rgba(255,255,255,0.75); padding-top: clamp(2.5rem, 6vw, 4rem); }
+
+.footer-grid { display: grid; grid-template-columns: 1fr; gap: 2.25rem; padding-bottom: 2.5rem; }
+
+.footer-brand { max-width: 320px; }
+.footer-brand p { font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-top: 0; }
+
+.logo-footer { color: #fff; margin-bottom: 0.9rem; }
+.logo-footer .logo-mark { background: rgba(255,255,255,0.14); color: #fff; }
+
+.footer-col h3 {
+  color: #fff; font-size: 0.92rem; letter-spacing: 0.02em;
+  margin-bottom: 1.1rem; padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(255,255,255,0.14);
+}
+.footer-col ul { display: flex; flex-direction: column; gap: 0.7rem; }
+.footer-col a, .footer-col span {
+  color: rgba(255,255,255,0.65); font-size: 0.9rem;
+  display: inline-flex; align-items: center; min-height: 24px;
+  transition: color 0.15s ease;
+}
+.footer-col a:hover { color: #fff; }
+
+.footer-disclaimer { border-top: 1px solid rgba(255,255,255,0.12); padding: 1.5rem 0; }
+.footer-disclaimer p { font-size: 0.75rem; color: rgba(255,255,255,0.5); max-width: 900px; margin: 0; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding: 1.5rem 0 1.25rem;
+  display: flex; flex-direction: column; gap: 1rem;
+}
+.footer-legal { display: flex; align-items: center; gap: 0.85rem; flex-wrap: wrap; }
+.footer-legal a { color: rgba(255,255,255,0.72); font-size: 0.88rem; font-weight: 500; }
+.footer-legal a:hover { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+.footer-legal-divider { width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,0.3); display: inline-block; }
+.footer-copyright { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin: 0; }
+
+.footer-note {
+  padding: 1.1rem 0 1.75rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.footer-note p { font-size: 0.72rem; color: rgba(255,255,255,0.42); margin: 0; max-width: 900px; }
+
+/* ============================================
+   BREAKPOINTS
+============================================ */
+@media (min-width: 576px) {
+  .final-cta-buttons .btn { flex: 0 1 auto; }
+  .quick-links-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 768px) {
+  .toc-list { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-bottom { flex-direction: row; justify-content: space-between; align-items: center; }
+  .privacy-contact-actions .btn { flex: 0 1 auto; }
+}
+
+@media (min-width: 992px) {
+  .main-nav { display: block; }
+  .hamburger { display: none; }
+  .btn-header { display: inline-flex; }
+
+  .quick-links-grid { grid-template-columns: repeat(3, 1fr); }
+  .footer-grid { grid-template-columns: 1.4fr repeat(3, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ============================================
+     4. STICKY HEADER (markup)
+============================================ -->
+<header class="header" id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="Energy Connect home">
+      <span class="logo-mark" aria-hidden="true"><i data-lucide="zap"></i></span>
+      <span class="logo-text">Energy Connect</span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="faq.html" class="nav-link">FAQ</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a href="contact.html#call-section" class="btn btn-primary btn-header">Pay Your Bill</a>
+      <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" aria-hidden="true">
+  <div class="mobile-nav-top">
+    <a href="index.html" class="logo" aria-label="Energy Connect home">
+      <span class="logo-mark" aria-hidden="true"><i data-lucide="zap"></i></span>
+      <span class="logo-text">Energy Connect</span>
+    </a>
+    <button class="mobile-close" id="mobile-close-btn" aria-label="Close menu">
+      <i data-lucide="x"></i>
+    </button>
+  </div>
+  <ul class="mobile-nav-links">
+    <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+    <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+    <li><a href="faq.html" class="mobile-nav-link">FAQ</a></li>
+    <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+  </ul>
+  <a href="contact.html#call-section" class="btn btn-primary mobile-pay-btn">Pay Your Bill</a>
+</nav>
+
+<main id="main">
+
+  <!-- ============================================
+       5. PRIVACY HERO
+  ============================================ -->
+  <section class="policy-hero">
+    <div class="container">
+      <span class="eyebrow">Energy Connect &bull; Privacy</span>
+      <span class="policy-hero-icon"><i data-lucide="shield-check"></i></span>
+      <h1>Privacy Policy</h1>
+      <p class="policy-hero-sub">Your privacy matters to us. This Privacy Policy explains what information Energy Connect may collect, how it may be used, and the choices available to you when you use our website or services.</p>
+      <span class="policy-updated">
+        <i data-lucide="calendar"></i>
+        Last Updated: [Insert Date]
+      </span>
+
+      <div class="legal-notice reveal">
+        <span class="legal-notice-icon" aria-hidden="true"><i data-lucide="info"></i></span>
+        <p>Please read this Privacy Policy carefully. By using the Energy Connect website or requesting our services, you acknowledge that you have reviewed this policy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       6. TABLE OF CONTENTS
+  ============================================ -->
+  <section class="toc-wrap">
+    <div class="container container-narrow">
+      <div class="toc-card reveal">
+        <h2>Table of Contents</h2>
+        <ul class="toc-list">
+          <li><a href="#info-we-collect"><span class="toc-num">1</span> Information We Collect</a></li>
+          <li><a href="#how-we-use"><span class="toc-num">2</span> How We Use Information</a></li>
+          <li><a href="#info-sharing"><span class="toc-num">3</span> Information Sharing</a></li>
+          <li><a href="#cookies"><span class="toc-num">4</span> Cookies and Similar Technologies</a></li>
+          <li><a href="#third-party"><span class="toc-num">5</span> Third-Party Services and Links</a></li>
+          <li><a href="#data-retention"><span class="toc-num">6</span> Data Retention</a></li>
+          <li><a href="#data-security"><span class="toc-num">7</span> Data Security</a></li>
+          <li><a href="#your-choices"><span class="toc-num">8</span> Your Choices and Rights</a></li>
+          <li><a href="#childrens-privacy"><span class="toc-num">9</span> Children's Privacy</a></li>
+          <li><a href="#policy-changes"><span class="toc-num">10</span> Changes to This Privacy Policy</a></li>
+          <li><a href="#contact-us"><span class="toc-num">11</span> Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       7. POLICY BODY
+  ============================================ -->
+  <section class="policy-body">
+    <div class="container container-narrow">
+
+      <!-- SECTION 1 -->
+      <article class="policy-section reveal" id="info-we-collect">
+        <h2><span class="policy-section-num">1</span> Information We Collect</h2>
+        <p>Information may be collected when you voluntarily provide it or when you interact with our website. The exact information requested may depend on the service you are asking about.</p>
+
+        <h3>Information You Provide</h3>
+        <p>Depending on your request, this may include information such as:</p>
+        <ul class="policy-list">
+          <li><i data-lucide="check"></i> Name</li>
+          <li><i data-lucide="check"></i> Phone number</li>
+          <li><i data-lucide="check"></i> Email address</li>
+          <li><i data-lucide="check"></i> Service address</li>
+          <li><i data-lucide="check"></i> Billing-related information</li>
+          <li><i data-lucide="check"></i> Utility or provider information</li>
+          <li><i data-lucide="check"></i> Information needed to assist with a requested service</li>
+          <li><i data-lucide="check"></i> Information included in communications with Energy Connect</li>
+        </ul>
+
+        <h3>Information Collected Automatically</h3>
+        <p>Depending on how the website is configured, we may collect limited technical information such as:</p>
+        <ul class="policy-list">
+          <li><i data-lucide="check"></i> IP address</li>
+          <li><i data-lucide="check"></i> Browser type</li>
+          <li><i data-lucide="check"></i> Device type</li>
+          <li><i data-lucide="check"></i> Operating system</li>
+          <li><i data-lucide="check"></i> Pages viewed</li>
+          <li><i data-lucide="check"></i> Referring pages</li>
+          <li><i data-lucide="check"></i> Approximate usage information</li>
+          <li><i data-lucide="check"></i> Date and time of website interactions</li>
+        </ul>
+      </article>
+
+      <!-- SECTION 2 -->
+      <article class="policy-section reveal" id="how-we-use">
+        <h2><span class="policy-section-num">2</span> How We Use Information</h2>
+        <p>Information may be used to:</p>
+        <ul class="policy-list">
+          <li><i data-lucide="check"></i> Respond to customer inquiries</li>
+          <li><i data-lucide="check"></i> Provide requested assistance</li>
+          <li><i data-lucide="check"></i> Help customers with utility-related requests</li>
+          <li><i data-lucide="check"></i> Assist with bill or payment-related requests</li>
+          <li><i data-lucide="check"></i> Help customers explore provider or service options</li>
+          <li><i data-lucide="check"></i> Coordinate requested technician assistance</li>
+          <li><i data-lucide="check"></i> Communicate about requested services</li>
+          <li><i data-lucide="check"></i> Improve website functionality</li>
+          <li><i data-lucide="check"></i> Maintain website operations</li>
+          <li><i data-lucide="check"></i> Detect or prevent misuse</li>
+          <li><i data-lucide="check"></i> Comply with applicable legal obligations</li>
+        </ul>
+      </article>
+
+      <!-- SECTION 3 -->
+      <article class="policy-section reveal" id="info-sharing">
+        <h2><span class="policy-section-num">3</span> Information Sharing</h2>
+        <p>Energy Connect may share information when reasonably necessary to operate a requested service. This can include the following categories.</p>
+
+        <h3>Service Providers</h3>
+        <p>Third-party vendors may help with website hosting, communications, analytics, technical operations, or other business functions.</p>
+
+        <h3>Utility Providers or Service Partners</h3>
+        <p>When necessary to fulfill a customer's request, relevant information may be shared with a utility provider, service provider, technician, or other third party involved in the requested service.</p>
+
+        <h3>Legal Requirements</h3>
+        <p>Information may be disclosed when required by law, legal process, or to protect legitimate rights and safety.</p>
+
+        <h3>Business Transfers</h3>
+        <p>Information may be transferred as part of a merger, acquisition, restructuring, sale, or similar business transaction, where legally permitted.</p>
+      </article>
+
+      <!-- SECTION 4 -->
+      <article class="policy-section reveal" id="cookies">
+        <h2><span class="policy-section-num">4</span> Cookies and Similar Technologies</h2>
+        <p>Cookies are small files that may be stored on your device when you visit a website. Energy Connect may use cookies and similar technologies depending on the features and tools enabled on the website, for purposes such as:</p>
+        <ul class="policy-list">
+          <li><i data-lucide="check"></i> Website functionality</li>
+          <li><i data-lucide="check"></i> Preferences</li>
+          <li><i data-lucide="check"></i> Analytics</li>
+          <li><i data-lucide="check"></i> Understanding website usage</li>
+          <li><i data-lucide="check"></i> Improving website performance</li>
+        </ul>
+        <p>You may be able to manage cookies through your browser settings.</p>
+      </article>
+
+      <!-- SECTION 5 -->
+      <article class="policy-section reveal" id="third-party">
+        <h2><span class="policy-section-num">5</span> Third-Party Services and Links</h2>
+        <p>Our website may contain links, integrations, or references to third-party websites and services, such as:</p>
+        <ul class="policy-list">
+          <li><i data-lucide="check"></i> Utility providers</li>
+          <li><i data-lucide="check"></i> Payment-related services</li>
+          <li><i data-lucide="check"></i> Communication services</li>
+          <li><i data-lucide="check"></i> Analytics providers</li>
+          <li><i data-lucide="check"></i> Other external service providers</li>
+        </ul>
+        <p>Third-party websites and services have their own privacy policies and practices. Energy Connect is not responsible for the privacy practices of independent third parties.</p>
+      </article>
+
+      <!-- SECTION 6 -->
+      <article class="policy-section reveal" id="data-retention">
+        <h2><span class="policy-section-num">6</span> Data Retention</h2>
+        <p>Information may be retained only for as long as reasonably necessary for the purposes described in this policy, including to:</p>
+        <ul class="policy-list">
+          <li><i data-lucide="check"></i> Provide services</li>
+          <li><i data-lucide="check"></i> Maintain business records</li>
+          <li><i data-lucide="check"></i> Resolve disputes</li>
+          <li><i data-lucide="check"></i> Meet legal obligations</li>
+          <li><i data-lucide="check"></i> Enforce agreements</li>
+          <li><i data-lucide="check"></i> Prevent fraud or misuse</li>
+        </ul>
+      </article>
+
+      <!-- SECTION 7 -->
+      <article class="policy-section reveal" id="data-security">
+        <h2><span class="policy-section-num">7</span> Data Security</h2>
+        <p>Energy Connect takes reasonable steps designed to help protect information from unauthorized access, use, alteration, or disclosure.</p>
+        <div class="policy-callout">No method of transmitting or storing information can be guaranteed to be completely secure.</div>
+      </article>
+
+      <!-- SECTION 8 -->
+      <article class="policy-section reveal" id="your-choices">
+        <h2><span class="policy-section-num">8</span> Your Choices and Rights</h2>
+        <p>Depending on applicable law and your location, you may have certain rights regarding your personal information, which may include the ability to:</p>
+        <ul class="policy-list">
+          <li><i data-lucide="check"></i> Request access to personal information</li>
+          <li><i data-lucide="check"></i> Request correction of inaccurate information</li>
+          <li><i data-lucide="check"></i> Request deletion where applicable</li>
+          <li><i data-lucide="check"></i> Ask questions about information handling</li>
+          <li><i data-lucide="check"></i> Manage certain communications</li>
+          <li><i data-lucide="check"></i> Exercise other rights provided by applicable law</li>
+        </ul>
+        <p>You can contact Energy Connect with any privacy-related questions using the information in the Contact Us section below.</p>
+      </article>
+
+      <!-- SECTION 9 -->
+      <article class="policy-section reveal" id="childrens-privacy">
+        <h2><span class="policy-section-num">9</span> Children's Privacy</h2>
+        <p>Our website and services are intended for a general audience and are not directed specifically to children. We do not knowingly seek to collect personal information from children in circumstances where doing so is prohibited by applicable law.</p>
+      </article>
+
+      <!-- SECTION 10 -->
+      <article class="policy-section reveal" id="policy-changes">
+        <h2><span class="policy-section-num">10</span> Changes to This Privacy Policy</h2>
+        <p>Energy Connect may update this Privacy Policy from time to time. The updated version may be posted on this page, and the "Last Updated" date may be changed when appropriate. We encourage you to periodically review this policy.</p>
+      </article>
+
+      <!-- SECTION 11 -->
+      <article class="policy-section reveal" id="contact-us">
+        <h2><span class="policy-section-num">11</span> Contact Us</h2>
+        <p>Have a question about this Privacy Policy or how your information is handled? Contact Energy Connect.</p>
+
+        <div class="privacy-contact-card">
+          <a href="tel:+18888814446" class="privacy-contact-phone">
+            <i data-lucide="phone-call"></i>
+            888-881-4446
+          </a>
+          <div class="privacy-contact-actions">
+            <a href="contact.html#call-section" class="btn btn-primary">
+              <i data-lucide="phone" class="btn-icon"></i>
+              Call Energy Connect
+            </a>
+            <a href="mailto:support@energyconnect.com" class="btn btn-secondary" style="border-color: rgba(255,255,255,0.4); color: #fff;">
+              <i data-lucide="mail" class="btn-icon"></i>
+              support@energyconnect.com
+            </a>
+          </div>
+          <p class="privacy-contact-note">For privacy-related questions, please include enough information for us to understand your request without sending unnecessary sensitive information.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============================================
+       8. QUICK LINKS
+  ============================================ -->
+  <section class="section section-soft">
+    <div class="container">
+      <div class="quick-links-grid">
+        <a href="privacy.html" class="quick-link-card reveal">
+          <span class="quick-link-icon"><i data-lucide="shield-check"></i></span>
+          <span>
+            <h3>Privacy Policy</h3>
+            <span>How we handle information</span>
+          </span>
+        </a>
+        <a href="terms.html" class="quick-link-card reveal">
+          <span class="quick-link-icon"><i data-lucide="file-text"></i></span>
+          <span>
+            <h3>Terms &amp; Conditions</h3>
+            <span>Website and service terms</span>
+          </span>
+        </a>
+        <a href="contact.html#call-section" class="quick-link-card reveal">
+          <span class="quick-link-icon"><i data-lucide="headset"></i></span>
+          <span>
+            <h3>Contact Support</h3>
+            <span>Speak with our team</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       9. FINAL CTA
+  ============================================ -->
+  <section class="final-cta">
+    <div class="container final-cta-inner reveal">
+      <h2>Need Help With Your Utility Service?</h2>
+      <p>Our team can help you navigate your next utility-related request.</p>
+      <div class="final-cta-buttons">
+        <a href="contact.html#call-section" class="btn btn-primary btn-lg">
+          <i data-lucide="phone" class="btn-icon"></i>
+          Get Support
+        </a>
+        <a href="services.html" class="btn btn-secondary btn-lg" style="border-color: rgba(255,255,255,0.4); color: #fff;">View Services</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================
+     10. FOOTER
+============================================ -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col footer-brand">
+      <a href="index.html" class="logo logo-footer">
+        <span class="logo-mark" aria-hidden="true"><i data-lucide="zap"></i></span>
+        <span class="logo-text">Energy Connect</span>
+      </a>
+      <p>A convenient platform for utility-related services, support, and customer assistance.</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html#call-section">Pay Your Bill</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Contact</h3>
+      <ul>
+        <li><a href="tel:+18888814446">888-881-4446</a></li>
+        <li><a href="mailto:support@energyconnect.com">support@energyconnect.com</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer-disclaimer">
+    <p>Energy Connect is an independent service platform. Utility providers, company names, logos, and trademarks belong to their respective owners. Availability of services and providers may vary by location.</p>
+  </div>
+
+  <div class="container footer-bottom">
+    <div class="footer-legal">
+      <a href="privacy.html">Privacy Policy</a>
+      <span class="footer-legal-divider" aria-hidden="true"></span>
+      <a href="terms.html">Terms &amp; Conditions</a>
+    </div>
+    <p class="footer-copyright">© 2026 Energy Connect. All rights reserved.</p>
+  </div>
+
+  <div class="container footer-note">
+    <p>This Privacy Policy is provided for general informational purposes and should be reviewed and customized for Energy Connect's actual business practices and applicable legal requirements.</p>
+  </div>
+</footer>
+
+<!-- ============================================
+     11. JAVASCRIPT
+============================================ -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  if (window.lucide) { lucide.createIcons(); }
+
+  /* ---------- STICKY HEADER SHADOW ON SCROLL ---------- */
+  var header = document.getElementById('site-header');
+  function updateHeaderShadow() {
+    if (window.scrollY > 4) {
+      header.classList.add('is-scrolled');
+    } else {
+      header.classList.remove('is-scrolled');
+    }
+  }
+  updateHeaderShadow();
+  window.addEventListener('scroll', updateHeaderShadow, { passive: true });
+
+  /* ---------- MOBILE NAVIGATION ---------- */
+  var hamburgerBtn = document.getElementById('hamburger-btn');
+  var mobileNav = document.getElementById('mobile-nav');
+  var mobileOverlay = document.getElementById('mobile-nav-overlay');
+  var mobileCloseBtn = document.getElementById('mobile-close-btn');
+  var mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .mobile-pay-btn');
+  var body = document.body;
+
+  function openMobileNav() {
+    mobileNav.classList.add('is-open');
+    mobileOverlay.classList.add('is-open');
+    mobileNav.setAttribute('aria-hidden', 'false');
+    hamburgerBtn.setAttribute('aria-expanded', 'true');
+    body.classList.add('nav-open');
+    mobileCloseBtn.focus();
+  }
+
+  function closeMobileNav() {
+    mobileNav.classList.remove('is-open');
+    mobileOverlay.classList.remove('is-open');
+    mobileNav.setAttribute('aria-hidden', 'true');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+    body.classList.remove('nav-open');
+    hamburgerBtn.focus();
+  }
+
+  if (hamburgerBtn) {
+    hamburgerBtn.addEventListener('click', function () {
+      var isOpen = mobileNav.classList.contains('is-open');
+      if (isOpen) { closeMobileNav(); } else { openMobileNav(); }
+    });
+  }
+  if (mobileCloseBtn) { mobileCloseBtn.addEventListener('click', closeMobileNav); }
+  if (mobileOverlay) { mobileOverlay.addEventListener('click', closeMobileNav); }
+  mobileNavLinks.forEach(function (link) { link.addEventListener('click', closeMobileNav); });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) { closeMobileNav(); }
+  });
+
+  /* ---------- ACTIVE NAV STATE FOR THIS PAGE ---------- */
+  document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(function (link) {
+    var href = link.getAttribute('href') || '';
+    if (href.indexOf('privacy.html') === 0 || href === 'privacy.html') {
+      link.classList.add('is-active');
+    }
+  });
+
+  /* ---------- SCROLL REVEAL ---------- */
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && revealEls.length) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealEls.forEach(function (el) { observer.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+});
+</script>
+</body>
+</html>
