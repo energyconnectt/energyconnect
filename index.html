@@ -68,8 +68,8 @@ body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(1100px 620px at 92% -8%, rgba(255, 107, 53, 0.13), transparent 60%),
-    radial-gradient(900px 560px at -8% 18%, rgba(47, 111, 237, 0.13), transparent 55%),
+    radial-gradient(1100px 620px at 92% -8%, rgba(47, 111, 237, 0.13), transparent 60%),
+    radial-gradient(900px 560px at -8% 18%, rgba(47, 111, 237, 0.09), transparent 55%),
     radial-gradient(1000px 700px at 50% 115%, rgba(11, 36, 71, 0.07), transparent 60%),
     var(--bg);
   background-attachment: fixed;
@@ -851,6 +851,49 @@ body.nav-open {
   justify-content: center;
 }
 .final-cta-buttons .btn { flex: 1 1 auto; }
+
+/* =================================================
+   DISCLAIMER BANNER
+================================================= */
+.disclaimer-banner {
+  background: var(--bg-soft);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: clamp(1.5rem, 3vw, 2rem) 0;
+}
+
+.disclaimer-banner-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.disclaimer-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(47, 111, 237, 0.1);
+  color: var(--blue);
+}
+.disclaimer-icon [data-lucide] { width: 19px; height: 19px; }
+
+.disclaimer-banner-inner p {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0;
+}
+
+.disclaimer-banner-inner strong {
+  color: var(--navy);
+}
 
 /* =================================================
    FOOTER
@@ -1765,6 +1808,14 @@ body.nav-open .sticky-call-btn { display: none; }
         <a href="contact.html#call-section" class="btn btn-primary btn-lg">Pay Your Bill</a>
         <a href="tel:+18888814446" class="btn btn-ghost btn-lg">Call Us</a>
       </div>
+    </div>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <section class="disclaimer-banner" aria-label="Important disclaimer">
+    <div class="container disclaimer-banner-inner">
+      <span class="disclaimer-icon" aria-hidden="true"><i data-lucide="info"></i></span>
+      <p><strong>Please note:</strong> Energy Connect is an independently operated, authorized energy services partner. We are not a utility company, energy provider, or government agency, and we are not affiliated with or endorsed by any government entity. We work on behalf of customers to help them access supported provider services, payments, and utility-related assistance.</p>
     </div>
   </section>
 
