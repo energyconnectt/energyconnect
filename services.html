@@ -23,6 +23,8 @@
   --navy-soft: #16345F;
   --blue: #2F6FED;
   --blue-dark: #2058C9;
+  --accent: #FF6B35;
+  --accent-dark: #E8531F;
   --green: #1E9E6C;
   --bg: #FFFFFF;
   --bg-soft: #F4F6F9;
@@ -138,6 +140,75 @@ svg, [data-lucide] { width: 1em; height: 1em; }
 .section-heading h2 { font-size: clamp(1.6rem, 3.4vw, 2.4rem); }
 .section-sub { font-size: 1.05rem; }
 .section-cta { text-align: center; margin-top: clamp(1.75rem, 4vw, 2.5rem); }
+
+/* =================================================
+   ANNOUNCEMENT BAR
+================================================= */
+.announcement-bar {
+  overflow: hidden;
+  background: linear-gradient(90deg, var(--navy) 0%, var(--blue) 55%, var(--accent) 130%);
+  color: #fff;
+  position: relative;
+  z-index: 210;
+}
+
+.announcement-track {
+  display: flex;
+  width: max-content;
+  animation: announcement-scroll 22s linear infinite;
+}
+
+.announcement-bar:hover .announcement-track,
+.announcement-bar:focus-within .announcement-track {
+  animation-play-state: paused;
+}
+
+.announcement-group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.announcement-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  padding: 0.6rem 2.25rem;
+}
+
+.announcement-item [data-lucide] {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  color: #fff;
+}
+
+.announcement-item a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 800;
+}
+.announcement-item a:hover { text-decoration: none; }
+
+@keyframes announcement-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .announcement-track {
+    animation: none;
+  }
+  .announcement-group[aria-hidden="true"] {
+    display: none;
+  }
+}
 
 /* =================================================
    SCROLL REVEAL
@@ -978,6 +1049,24 @@ body.nav-open .sticky-call-btn { display: none; }
 <body>
 
 <a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement-bar" role="region" aria-label="Promotional announcement">
+  <div class="announcement-track">
+    <div class="announcement-group">
+      <span class="announcement-item"><i data-lucide="percent" aria-hidden="true"></i> Get discounts on your electricity &amp; gas bills — <a href="tel:+18888814446">Call us now: (888) 881-4446</a></span>
+      <span class="announcement-item"><i data-lucide="percent" aria-hidden="true"></i> Get discounts on your electricity &amp; gas bills — <a href="tel:+18888814446">Call us now: (888) 881-4446</a></span>
+      <span class="announcement-item"><i data-lucide="percent" aria-hidden="true"></i> Get discounts on your electricity &amp; gas bills — <a href="tel:+18888814446">Call us now: (888) 881-4446</a></span>
+      <span class="announcement-item"><i data-lucide="percent" aria-hidden="true"></i> Get discounts on your electricity &amp; gas bills — <a href="tel:+18888814446">Call us now: (888) 881-4446</a></span>
+    </div>
+    <div class="announcement-group" aria-hidden="true">
+      <span class="announcement-item"><i data-lucide="percent" aria-hidden="true"></i> Get discounts on your electricity &amp; gas bills — <a href="tel:+18888814446" tabindex="-1">Call us now: (888) 881-4446</a></span>
+      <span class="announcement-item"><i data-lucide="percent" aria-hidden="true"></i> Get discounts on your electricity &amp; gas bills — <a href="tel:+18888814446" tabindex="-1">Call us now: (888) 881-4446</a></span>
+      <span class="announcement-item"><i data-lucide="percent" aria-hidden="true"></i> Get discounts on your electricity &amp; gas bills — <a href="tel:+18888814446" tabindex="-1">Call us now: (888) 881-4446</a></span>
+      <span class="announcement-item"><i data-lucide="percent" aria-hidden="true"></i> Get discounts on your electricity &amp; gas bills — <a href="tel:+18888814446" tabindex="-1">Call us now: (888) 881-4446</a></span>
+    </div>
+  </div>
+</div>
 
 <!-- HEADER -->
 <header class="site-header" id="site-header">
